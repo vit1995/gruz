@@ -2457,6 +2457,13 @@ body::after {
   display: -ms-flexbox;
   display: flex;
   gap: 1.25rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  padding: 0.1875rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  cursor: pointer;
 }
 
 .services__item {
@@ -2582,6 +2589,10 @@ body::after {
   background: #fff;
 }
 
+.car-tumb__wrapper {
+  left: -44%;
+}
+
 .car-tumb__slide {
   border-radius: 16px;
   padding: 0.75rem;
@@ -2609,7 +2620,7 @@ body::after {
   font-weight: 500;
 }
 
-.car-tumb__slide.swiper-slide-thumb-active {
+.car-tumb__slide.swiper-slide-active {
   background-color: rgba(1, 78, 245, 0.2941176471);
 }
 
@@ -5661,6 +5672,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 
+@media (max-width: 62em) {
+  .car-tumb__wrapper {
+    left: 0;
+  }
+}
+
 @media (max-width: 20em) {
   .button {
     font-size: 0.75rem;
@@ -6139,7 +6156,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .car-tumb__price {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .form__body {
@@ -6654,6 +6671,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
+  }
+
+  .car__body {
+    padding: 0.9375rem;
   }
 
   .stock__slide {
@@ -8120,15 +8141,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (font-size: clamp( 1rem , 0.9595959596rem  +  0.202020202vw , 1.125rem )) {
+@supports (font-size: clamp( 0.875rem , 0.7941919192rem  +  0.404040404vw , 1.125rem )) {
     .car-tumb__price {
-      font-size: clamp( 1rem , 0.9595959596rem  +  0.202020202vw , 1.125rem );
+      font-size: clamp( 0.875rem , 0.7941919192rem  +  0.404040404vw , 1.125rem );
     }
 }
 
-@supports not (font-size: clamp( 1rem , 0.9595959596rem  +  0.202020202vw , 1.125rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.7941919192rem  +  0.404040404vw , 1.125rem )) {
     .car-tumb__price {
-      font-size: calc(1rem + 0.125 * (100vw - 20rem) / 61.875);
+      font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 61.875);
     }
 }
 
@@ -8678,6 +8699,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-animation: shine 1s;
             animation: shine 1s;
     opacity: 1;
+  }
+
+  .services__column:hover {
+    background: rgba(46, 52, 80, 0.1450980392);
   }
 
   .form__number:hover {

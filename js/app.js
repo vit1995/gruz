@@ -5284,36 +5284,7 @@
         }
         function initSliders() {
             if (document.querySelector(".car__slider ")) {
-                const thumbsSwiper = new core(".car-tumb__slider", {
-                    modules: [ Navigation, Thumb ],
-                    observer: true,
-                    observeParents: true,
-                    slidesPerView: 2.3,
-                    spaceBetween: 10,
-                    autoHeight: true,
-                    speed: 800,
-                    breakpoints: {
-                        640: {
-                            slidesPerView: 3.3,
-                            spaceBetween: 0,
-                            autoHeight: true
-                        },
-                        768: {
-                            slidesPerView: 4.5,
-                            spaceBetween: 20
-                        },
-                        992: {
-                            slidesPerView: 5,
-                            spaceBetween: 20
-                        },
-                        1268: {
-                            slidesPerView: 8.5,
-                            spaceBetween: 30
-                        }
-                    },
-                    on: {}
-                });
-                new core(".car__slider ", {
+                const thumbsSwiper = new core(".car__slider ", {
                     modules: [ Navigation, Thumb, Autoplay ],
                     observer: true,
                     observeParents: true,
@@ -5321,13 +5292,55 @@
                     spaceBetween: 10,
                     autoHeight: true,
                     speed: 800,
+                    grabCursor: true,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    on: {}
+                });
+                new core(".car-tumb__slider", {
+                    modules: [ Navigation, Thumb, Autoplay ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 2.5,
+                    spaceBetween: 10,
+                    autoHeight: true,
+                    speed: 800,
+                    slideToClickedSlide: true,
                     watchOverflow: true,
+                    freeMode: true,
+                    watchSlidesProgress: true,
                     thumbs: {
                         swiper: thumbsSwiper
                     },
+                    initialSlide: 0,
+                    direction: "horizontal",
+                    autoplayStopOnLast: false,
+                    centeredSlides: true,
+                    freeMode: true,
+                    watchSlidesProgress: true,
                     autoplay: {
                         delay: 3e3,
                         disableOnInteraction: false
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 3.5,
+                            spaceBetween: 0,
+                            autoHeight: true
+                        },
+                        768: {
+                            slidesPerView: 5.5,
+                            spaceBetween: 20
+                        },
+                        992: {
+                            slidesPerView: 7.5,
+                            spaceBetween: 20
+                        },
+                        1268: {
+                            slidesPerView: 8.5,
+                            spaceBetween: 30,
+                            autoHeight: true
+                        }
                     },
                     on: {}
                 });
